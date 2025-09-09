@@ -1,10 +1,17 @@
-import Image from "next/image";
+import { getPosts } from '@/lib/api';
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getPosts();
+
   return (
     <main>
-      <h1>¡Hola! Bienvenido a mi portafolio.</h1>
-      <p>Este es el primer paso para crear tu sitio web.</p>
+      <h1>Mi Portafolio y Blog</h1>
+      {posts.map((post: any) => (
+        <div key={post.id}>
+          <h2>{post.title}</h2>
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        </div>
+      ))}
     </main>
   );
 }
