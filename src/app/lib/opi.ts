@@ -1,5 +1,4 @@
 import { GraphQLClient, gql } from 'graphql-request';
-
 const API_URL = 'const API_URL = 'https://javiermix.ar/graphql';
 
 // Función para obtener todos los posts
