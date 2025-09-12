@@ -3,15 +3,11 @@ import { getPosts } from '../lib/api';
 export default async function Home() {
   const posts = await getPosts();
 
+  console.log("Datos de WordPress:", posts);
+
   return (
     <main>
-      <h1>Mi Portafolio y Blog</h1>
-      {posts.map((post: any) => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
-        </div>
-      ))}
+      <h1>Probando la conexión</h1>
     </main>
   );
 }
